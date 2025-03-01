@@ -1,0 +1,219 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(45deg, #1a1a2e, #3a1c71);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #e0e0e0;
+    margin: 0;
+
+    display: flex;
+    height: 100dvh;
+    min-height: max-content;
+    /* overflow: hidden; */
+    flex-direction: column;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2;
+    color: #ff66b2;
+    /* border: 2px solid white; */
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: rgba(19, 18, 18, 0.349);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px #ff66b2;
+    position: fixed; /* Sidebar stays fixed */
+    height: 100vh;
+    overflow-y: auto; /* Allows scrolling inside sidebar if needed */
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 250px; /* Push content right to make space for sidebar */
+    padding: 20px;
+    overflow-y: auto; /* Allows scrolling only in content if needed */
+}
+
+/* Dropdown */
+select {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    background: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff66b2;
+    margin-top: 10px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    background: #0099ff;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #0099ff;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #007acc;
+    box-shadow: 0 0 15px #007acc;
+    transform: scale(1.05);
+}
+
+/* Image Container */
+.image-container {
+    display: none; /* Hidden by default */
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 80%;
+    max-height: 80vh;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff66b2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Image Buttons */
+.image-buttons {
+    margin-top: 10px;
+}
+
+.image-buttons button {
+    width: auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+/* Loader */
+.loader {
+    display: none;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ff66b2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Music Controls */
+.music-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff66b2;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.music-controls:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff66b2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        /* border: 2px solid white; */
+        position: unset;
+        height: max-content;
+        /* padding: 0; */
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 0px;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    img {
+        max-width: 90%;
+    }
+
+    .title{
+        position: unset;
+        left: unset;
+        transform: unset;
+        /* border: 2px solid white; */
+    }
+
+    body{
+        padding: 1%;
+    }
+
+}
+
+
+

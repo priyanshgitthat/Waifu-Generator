@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waifu Finder 💖</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <h1 class="title">Find Your Waifu</h1>
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Choose a Category</h2>
+            <select id="tag-select">
+                <optgroup label="Safe Tags">
+                    <option value="waifu">Waifu</option>
+                    <option value="maid">Maid</option>
+                    <option value="marin-kitagawa">Marin Kitagawa</option>
+                    <option value="mori-calliope">Mori Calliope</option>
+                    <option value="raiden-shogun">Raiden Shogun</option>
+                    <option value="oppai">Oppai</option>
+                    <option value="selfies">Selfies</option>
+                    <option value="uniform">Uniform</option>
+                    <option value="kamisato-ayaka">Kamisato Ayaka</option>
+                </optgroup>
+    
+                <optgroup label="NSFW Tags (18+ 🚨)">
+                    <option value="ero">Ero</option>
+                    <option value="ass">Ass</option>
+                    <option value="hentai">Hentai</option>
+                    <option value="milf">MILF</option>
+                    <option value="oral">Oral</option>
+                    <option value="paizuri">Paizuri</option>
+                    <option value="ecchi">Ecchi</option>
+                </optgroup>
+            </select>
+
+            <button onclick="fetchWaifu()">Search</button>
+        </div>
+
+        <!-- Image Display -->
+        <div class="content">
+            <div class="loader" id="loader"></div>
+            <div class="image-container" id="imageContainer">
+                <img id="waifuImage" src="" alt="Your waifu will appear here">
+                
+                <div class="image-buttons">
+                    <button onclick="downloadImage()">Download</button>
+                    <button onclick="shareImage()">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music -->
+    <div class="music-controls" id="musicButton" onclick="toggleMusic()">🔇
+
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="./saxophone-serenade-258382.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+    
+    <script src="./scripts.js"></script>
+
+</body>
+</html>
